@@ -211,7 +211,7 @@ class OpenMailAppPlugin : FlutterPlugin, MethodCallHandler {
     }
 
     private fun getInstalledMailApps(): List<App> {
-        val emailIntent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:"))
+        val emailIntent = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"))
         val packageManager = applicationContext.packageManager
         val activitiesHandlingEmails = packageManager.queryIntentActivities(emailIntent, 0)
 
